@@ -1,0 +1,19 @@
+name: "AIC8800 Driver Loader"
+version: "1.0.4"
+slug: aic8800_loader
+description: "Load AIC8800 WiFi driver"
+arch: [amd64]
+startup: services
+boot: auto
+host_network: true
+host_pid: true
+privileged:
+  - SYS_MODULE
+  - SYS_ADMIN
+  - SYS_RAWIO
+apparmor: false
+build:
+  base: "alpine:3.19"
+init: false
+map:
+  - rw
